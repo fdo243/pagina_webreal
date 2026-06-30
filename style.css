@@ -10,7 +10,8 @@ a:hover, button:hover {
 
 
 p {
-  background: green; 
+  color: white;
+  background: #001a5f; 
   font-family: "Rajdhani";
   font-weight: 500;
 }
