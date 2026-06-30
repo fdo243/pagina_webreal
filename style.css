@@ -1,3 +1,14 @@
+
+body {
+  cursor: url('imágenes/tarjeta-amarilla.png'), auto;
+}
+
+a:hover, button:hover {
+  cursor: url('imágenes/tarjeta-roja.png'), pointer;
+}
+
+
+
 p {
   background: green; 
   font-family: "Rajdhani";
