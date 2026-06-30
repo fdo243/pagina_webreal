@@ -78,8 +78,7 @@ p {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 0 6vw;
-  transform: rotate(-4deg);
+  padding: 0 2vw;
   /* CLAVE: perspective crea el espacio 3D para que el efecto translateZ de Animista funcione */
   perspective: 1200px; 
 }
@@ -104,6 +103,7 @@ p {
   display: block;
   text-align: right;
   text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000;
+  margin-top: 8vh;
 }
 
 
@@ -119,8 +119,8 @@ p {
           animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
   
   /* Retrasamos la animación derecha 0.2 segundos para el efecto de doble golpe */
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 /* --- KEYFRAMES IZQUIERDA --- */
