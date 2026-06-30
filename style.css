@@ -50,7 +50,7 @@ p {
 }
 
 
-/* El contenedor principal se mantiene igual */
+/* --- 1. CONTENEDORES BASE --- */
 .hero-brutalista {
   position: relative;
   width: 100%;
@@ -74,67 +74,103 @@ p {
   filter: grayscale(100%) contrast(150%); 
 }
 
-/* NUEVO: El contenedor ahora se estira a los lados y mantiene la inclinación */
 .contenedor-titulo {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 0 6vw; /* Espacio de seguridad para que no se pegue al borde absoluto */
-  transform: rotate(-4deg); /* Inclinación anti-diseño */
+  padding: 0 6vw;
+  transform: rotate(-4deg);
+  /* CLAVE: perspective crea el espacio 3D para que el efecto translateZ de Animista funcione */
+  perspective: 1200px; 
 }
 
 .titulo-caos {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 11vw; /* Bajamos a 11vw para asegurarnos que quepan bien en una sola línea */
+  font-size: 11vw;
   color: #FF0000;
   margin: 0;
   line-height: 0.85;
   text-transform: uppercase;
 }
 
-/* --- ANIMACIONES DE ENTRADA --- */
-
+/* --- 2. DISEÑO BRUTALISTA DE LAS LÍNEAS --- */
 .linea-izquierda {
   display: block;
-  text-align: left; /* Lo tira a la izquierda */
+  text-align: left;
   text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000;
-  
-  opacity: 0; /* Empieza invisible */
-  /* Llama a la animación, dura 1s, usa un efecto de freno seco (cubic-bezier) y se queda fija (forwards) */
-  animation: entrarIzquierda 1s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
 }
 
 .linea-derecha {
   display: block;
-  text-align: right; /* Lo tira a la derecha */
+  text-align: right;
   text-shadow: 12px 12px 0px #CCFF00, -2px -2px 0px #000;
-  
-  opacity: 0;
-  /* Tiene un 'delay' de 0.2s para que entre una milésima después que la primera, simulando un golpe */
-  animation: entrarDerecha 1s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
-  animation-delay: 0.2s; 
 }
 
-/* El camino que recorre el texto de la izquierda */
-@keyframes entrarIzquierda {
+
+/* --- 3. CÓDIGO DE ANIMISTA APLICADO --- */
+
+.slide-in-bck-left {
+  -webkit-animation: slide-in-bck-left 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+          animation: slide-in-bck-left 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+
+.slide-in-bck-right {
+  -webkit-animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+          animation: slide-in-bck-right 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  
+  /* Retrasamos la animación derecha 0.2 segundos para el efecto de doble golpe */
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+/* --- KEYFRAMES IZQUIERDA --- */
+@-webkit-keyframes slide-in-bck-left {
   0% {
-    transform: translateX(-100vw); /* Empieza completamente fuera de la pantalla a la izquierda */
+    -webkit-transform: translateZ(700px) translateX(-400px);
+            transform: translateZ(700px) translateX(-400px);
     opacity: 0;
   }
   100% {
-    transform: translateX(0); /* Termina en su posición original */
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bck-left {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(-400px);
+            transform: translateZ(700px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
     opacity: 1;
   }
 }
 
-/* El camino que recorre el texto de la derecha */
-@keyframes entrarDerecha {
+/* --- KEYFRAMES DERECHA --- */
+@-webkit-keyframes slide-in-bck-right {
   0% {
-    transform: translateX(100vw); /* Empieza fuera a la derecha */
+    -webkit-transform: translateZ(700px) translateX(400px);
+            transform: translateZ(700px) translateX(400px);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bck-right {
+  0% {
+    -webkit-transform: translateZ(700px) translateX(400px);
+            transform: translateZ(700px) translateX(400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateX(0);
+            transform: translateZ(0) translateX(0);
     opacity: 1;
   }
 }
