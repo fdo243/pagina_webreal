@@ -1,6 +1,8 @@
 
 body {
   cursor: url('imágenes/tarjeta-amarilla.png'), auto;
+   background-color: #020d2b;
+    align-items: center;
 }
 
 a:hover, button:hover {
