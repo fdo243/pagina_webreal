@@ -255,3 +255,12 @@ p {
 .img-5:hover {
   box-shadow: 15px 15px 0px #FF0000;
 }
+.seccion-expediente {
+  background-color: #050505;
+  padding: 15vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px; /* Aumenté el gap a 80px para que haya más separación entre el texto y las fotos */
+  border-bottom: 5px solid #FF0000;
+}
