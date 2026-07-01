@@ -1,3 +1,24 @@
+/* --- ANIMACIONES DE SCROLL --- */
+
+/* Clase que le pondremos a los elementos que queremos ocultar al principio */
+.oculto-al-scroll {
+  opacity: 0;
+  transform: translateY(100px); /* Los empuja 100 píxeles hacia abajo */
+  transition: all 1.2s cubic-bezier(0.1, 0.8, 0.3, 1); /* Transición suave pero seca al frenar */
+}
+
+/* Clase que JavaScript agregará mágicamente cuando el usuario baje */
+.aparecer {
+  opacity: 1;
+  transform: translateY(0); /* Vuelven a su posición original */
+}
+
+/* Opcional: Hacemos que la columna de texto tarde un poquito más en aparecer que la de imágenes */
+.retraso-1 {
+  transition-delay: 0.3s;
+}
+
+
 
 body {
   cursor: url('imágenes/tarjeta-amarilla.png'), auto;
