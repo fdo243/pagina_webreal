@@ -371,61 +371,52 @@ img {
   max-width: 45%;
 }
 
-/* Contenedor relativo para albergar el caos de los gráficos */
+/* Contenedor relativo: Le damos mucha más altura (800px) para gráficos gigantes */
 .columna-grafico {
   width: 55%;
   max-width: 55%;
   position: relative; 
-  min-height: 600px;  
+  min-height: 800px;  /* <-- CLAVE: Más espacio vertical para que no se asfixien */
 }
 
-/* --- CLASE BASE PARA LOS GRÁFICOS --- */
+/* --- CLASE BASE PARA LOS GRÁFICOS (VERSIÓN XL) --- */
 .grafico-brutal {
   position: absolute;
-  width: 85%;          
-  height: 400px;       
+  width: 95%;          /* Ahora ocupan casi todo el ancho de su mitad de pantalla */
+  height: 520px;       /* <-- CLAVE: Mucho más altos para que no se corte el contenido interno */
   background-color: #111111;
   border: 4px solid #CCFF00;
   box-shadow: 10px 10px 0px #FF0000;
   
-  /* Transición fluida para el efecto de agrandado */
   transition: all 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);
   z-index: 1;
 }
 
-/* Posición y rotación inicial del Gráfico 1 */
-.grafico-1 {
-  top: 50px; 
-  left: 0;
-  transform: rotate(-3deg);
-}
-
-/* Posición y rotación inicial del Gráfico 1 */
+/* Gráfico 1: Acomodado a su nuevo tamaño */
 .grafico-1 {
   top: 0px; 
-  left: 0;
-  transform: rotate(-3deg);
-  z-index: 1;
+  left: -2%;
+  transform: rotate(-2deg); /* Inclinación un poco más suave para que sea legible */
 }
 
-/* Posición y rotación inicial del Gráfico 2 */
+/* Gráfico 2: Empujado más abajo para que no tape tanto al primero */
 .grafico-2 {
-  top: 180px;  /* Lo empujamos hacia abajo para que se apile */
-  right: -5%;  /* Lo tiramos un poco a la derecha */
-  transform: rotate(4deg); /* Inclinación hacia el otro lado */
+  top: 250px;  /* Lo bajamos más porque ahora los gráficos son más altos */
+  right: -2%;  
+  transform: rotate(3deg);
   
-  /* Invertimos los colores para que contraste con el Gráfico 1 */
   border-color: #FF0000; 
   box-shadow: 10px 10px 0px #CCFF00;
-  
-  z-index: 2; /* Por defecto se asoma por encima del primero */
+  z-index: 2; 
 }
 
-/* --- 💥 EL EFECTO INTERACTIVO DE AGRANDADO MÁGICO --- */
+/* --- 💥 EL EFECTO INTERACTIVO --- */
 .grafico-brutal:hover {
   z-index: 10;                     
-  transform: rotate(0deg) scale(1.25); /* Se endereza y crece un 25% */
-  box-shadow: 20px 20px 0px #000000;  /* Sombra negra profunda para que resalte */
+  transform: rotate(0deg) scale(1.15); /* Escala ligeramente menor (1.15) porque ya son enormes de base */
+  box-shadow: 20px 20px 0px #000000;  
   border-color: #CCFF00;           
 }
+
+
 
