@@ -352,7 +352,7 @@ img {
 }
 
 /* =========================================
-   SECCIÓN DE DATOS (ESTILO COLLAGE BRUTALISTA)
+   SECCIÓN DE DATOS (IMÁGENES FIJAS Y CENTRADAS)
    ========================================= */
 
 .seccion-datos {
@@ -365,58 +365,48 @@ img {
   border-bottom: 5px solid #FF0000;
 }
 
-/* Freno de mano para la columna de texto */
 .seccion-datos .columna-texto {
   width: 45%;
   max-width: 45%;
 }
 
-/* Contenedor relativo: Le damos mucha más altura (800px) para gráficos gigantes */
+/* Columna derecha: Alinea verticalmente las imágenes en el centro */
 .columna-grafico {
   width: 55%;
   max-width: 55%;
-  position: relative; 
-  min-height: 800px;  /* <-- CLAVE: Más espacio vertical para que no se asfixien */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los gráficos horizontalmente en su zona */
+  gap: 45px;          /* Espacio de separación constante entre el gráfico 1 y el 2 */
 }
 
-/* --- CLASE BASE PARA LOS GRÁFICOS (VERSIÓN XL) --- */
-.grafico-brutal {
-  position: absolute;
-  width: 95%;          /* Ahora ocupan casi todo el ancho de su mitad de pantalla */
-  height: 520px;       /* <-- CLAVE: Mucho más altos para que no se corte el contenido interno */
-  background-color: #111111;
-  border: 4px solid #CCFF00;
-  box-shadow: 10px 10px 0px #FF0000;
+/* --- CLASE BASE PARA LOS GRÁFICOS ESTÁTICOS --- */
+.grafico-estatico {
+  display: block;
+  width: 95%;        /* Ocupan casi todo el ancho de su columna para que se vean grandes */
+  height: auto;      /* ¡CLAVE! Hace que la imagen escale perfectamente sin cortarse ni deformarse */
+  border-radius: 20px; /* El mismo radio de curvatura que tus otras imágenes */
   
-  transition: all 0.4s cubic-bezier(0.1, 0.8, 0.3, 1);
-  z-index: 1;
+  /* Filtro brutalista opcional: se ven en blanco y negro, pero ganan color al pasar el mouse */
+  filter: grayscale(100%) contrast(120%);
+  transition: filter 0.3s ease;
 }
 
-/* Gráfico 1: Acomodado a su nuevo tamaño */
-.grafico-1 {
-  top: 0px; 
-  left: -2%;
-  transform: rotate(-2deg); /* Inclinación un poco más suave para que sea legible */
+/* Al pasar el mouse recuperan su color original, pero se quedan completamente quietas */
+.grafico-estatico:hover {
+  filter: grayscale(0%) contrast(100%);
 }
 
-/* Gráfico 2: Empujado más abajo para que no tape tanto al primero */
-.grafico-2 {
-  top: 250px;  /* Lo bajamos más porque ahora los gráficos son más altos */
-  right: -2%;  
-  transform: rotate(3deg);
-  
-  border-color: #FF0000; 
-  box-shadow: 10px 10px 0px #CCFF00;
-  z-index: 2; 
+/* Gráfico 1: Borde amarillo neón con sombra roja */
+.grafico-estatico-1 {
+  border: 5px solid #CCFF00;
+  box-shadow: 12px 12px 0px #FF0000;
 }
 
-/* --- 💥 EL EFECTO INTERACTIVO --- */
-.grafico-brutal:hover {
-  z-index: 10;                     
-  transform: rotate(0deg) scale(1.15); /* Escala ligeramente menor (1.15) porque ya son enormes de base */
-  box-shadow: 20px 20px 0px #000000;  
-  border-color: #CCFF00;           
+/* Gráfico 2: Borde rojo con sombra amarilla neón (diseño invertido) */
+.grafico-estatico-2 {
+  border: 5px solid #FF0000;
+  box-shadow: 12px 12px 0px #CCFF00;
 }
-
 
 
