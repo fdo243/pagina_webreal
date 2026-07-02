@@ -39,7 +39,8 @@ img {
 TEXTOS 
 /* --- COLUMNA DE TEXTO (El expediente) --- */
 .columna-texto {
-  width: 50%;
+  width: 45%; /* Obliga al texto a no pasar de aquí */
+  padding-right: 3vw; /* Crea un escudo invisible para que no choque con las fotos */
 }
 
 .subtitulo-caos {
@@ -230,9 +231,9 @@ FONTS
 
 /* --- COLUMNA DE IMÁGENES (El collage de 5 fotos) --- */
 .columna-imagenes {
-  width: 50%;
+ width: 55%; /* Le regalamos más espacio a las fotos */
   position: relative;
-  min-height: 650px; /* Un poco más de altura para que quepan las 5 cómodas */
+  min-height: 700px; /* Subimos un poco la altura para que las fotos gigantes quepan bien */
 }
 
 .img-brutal {
