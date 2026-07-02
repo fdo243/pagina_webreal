@@ -22,7 +22,6 @@
 
 body {
   cursor: url('imágenes/tarjeta-amarilla.png'), auto;
-   background-color: #020d2b;
     align-items: center;
 }
 
@@ -37,12 +36,36 @@ img {
 }
 
 
-p {
-  color: white;
-  background: #001a5f; 
-  font-family: "Rajdhani";
-  font-weight: 500;
+TEXTOS 
+/* --- COLUMNA DE TEXTO (El expediente) --- */
+.columna-texto {
+  width: 50%;
 }
+
+.subtitulo-caos {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 8vw; /* ¡Tamaño gigante! */
+  color: #CCFF00;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0px #FF0000;
+}
+
+.texto-informe {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-size: 2rem; /* ¡Texto de lectura más grande! */
+  line-height: 1.6;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  background-color: #111111; 
+  padding: 20px 25px;
+  border-left: 6px solid #FF0000; 
+}
+
+FONTS
 .bebas-neue-regular {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
