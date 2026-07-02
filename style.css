@@ -410,3 +410,70 @@ img {
 }
 
 
+/* =========================================
+   SECCIÓN TEXTO CENTRAL Y FOTOS FLOTANTES (5 FOTOS)
+   ========================================= */
+
+.seccion-centro-scroll {
+  position: relative;
+  min-height: 110vh; /* Subimos un poco el alto para dar espacio a la quinta foto */
+  background-color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  border-bottom: 5px solid #FF0000;
+}
+
+.texto-central {
+  width: 50%;
+  z-index: 10; 
+  text-align: center;
+  background-color: rgba(17, 17, 17, 0.9); 
+  padding: 50px;
+  border: 4px solid #CCFF00;
+  box-shadow: 15px 15px 0px #FF0000;
+}
+
+.texto-central .texto-informe {
+  border-left: none;
+  margin-bottom: 0;
+}
+
+/* --- CLASE BASE PARA LAS FOTOS FLOTANTES --- */
+.img-flotante {
+  position: absolute;
+  width: 22%; 
+  border: 4px solid #FF0000;
+  filter: grayscale(100%) contrast(120%);
+  transition: all 0.5s ease;
+  z-index: 1; 
+}
+
+/* Posiciones en las esquinas y la nueva al centro-abajo */
+.img-f1 { top: 10%; left: 5%; transform: rotate(-10deg); }
+.img-f2 { bottom: 15%; right: 8%; transform: rotate(8deg); border-color: #CCFF00; }
+.img-f3 { top: 15%; right: 5%; transform: rotate(15deg); }
+.img-f4 { bottom: 10%; left: 7%; transform: rotate(-5deg); border-color: #CCFF00; }
+
+/* Foto 5: Ubicada abajo al centro, rompiendo el esquema visual */
+.img-f5 { 
+  bottom: 2%; 
+  left: 38%; 
+  transform: rotate(6deg); 
+  width: 24%; /* Un poco más ancha para equilibrar la base */
+}
+
+/* Efecto interactivo al pasar el mouse */
+.img-flotante:hover {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.15) rotate(0deg);
+  z-index: 20; 
+  box-shadow: 15px 15px 0px #CCFF00;
+}
+
+/* --- RETRASOS EN CASCADA ACTUALIZADOS --- */
+.retraso-2 { transition-delay: 0.5s; }
+.retraso-3 { transition-delay: 0.8s; }
+.retraso-4 { transition-delay: 1.1s; }
+.retraso-5 { transition-delay: 1.4s; } /* La quinta foto cierra el despliegue */
