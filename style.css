@@ -456,12 +456,13 @@ img {
 .img-f3 { top: 15%; right: 5%; transform: rotate(15deg); }
 .img-f4 { bottom: 10%; left: 7%; transform: rotate(-5deg); border-color: #CCFF00; }
 
-/* Foto 5: Ubicada abajo al centro, rompiendo el esquema visual */
+/* Foto 5: Rescatada de las sombras, asomándose por la derecha */
 .img-f5 { 
-  bottom: 2%; 
-  left: 38%; 
-  transform: rotate(6deg); 
-  width: 24%; /* Un poco más ancha para equilibrar la base */
+  bottom: 8%; 
+  left: 62%; /* La empujamos hacia la derecha para que escape del texto */
+  transform: rotate(-7deg); /* Inclinación brutalista */
+  width: 25%; 
+}
 }
 
 /* Efecto interactivo al pasar el mouse */
