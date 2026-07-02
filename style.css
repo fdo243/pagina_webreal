@@ -44,7 +44,7 @@ TEXTOS
 
 .subtitulo-caos {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 8vw; /* ¡Tamaño gigante! */
+  font-size: 5vw; /* ¡Tamaño gigante! */
   color: #CCFF00;
   margin-top: 0;
   margin-bottom: 30px;
@@ -56,7 +56,7 @@ TEXTOS
 .texto-informe {
   font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  font-size: 2rem; /* ¡Texto de lectura más grande! */
+  font-size: 1.5rem; /* ¡Texto de lectura más grande! */
   line-height: 1.6;
   color: #FFFFFF;
   margin-bottom: 25px;
