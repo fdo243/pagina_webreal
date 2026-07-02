@@ -452,17 +452,16 @@ img {
 
 /* Posiciones en las esquinas y la nueva al centro-abajo */
 .img-f1 { top: 10%; left: 5%; transform: rotate(-10deg); }
-.img-f2 { bottom: 15%; right: 8%; transform: rotate(8deg); border-color: #CCFF00; }
-.img-f3 { top: 15%; right: 5%; transform: rotate(15deg); }
-.img-f4 { bottom: 10%; left: 7%; transform: rotate(-5deg); border-color: #CCFF00; }
+.img-f2 { bottom: 30%; right: 8%; transform: rotate(8deg); border-color: #CCFF00; }
+.img-f3 { top: 20%; right: 5%; transform: rotate(15deg); }
+.img-f4 { bottom: 20%; left: 7%; transform: rotate(-5deg); border-color: #CCFF00; }
 
 /* Foto 5: Rescatada de las sombras, asomándose por la derecha */
 .img-f5 { 
-  bottom: 8%; 
+  bottom: 10%; 
   left: 62%; /* La empujamos hacia la derecha para que escape del texto */
   transform: rotate(-7deg); /* Inclinación brutalista */
   width: 25%; 
-}
 }
 
 /* Efecto interactivo al pasar el mouse */
