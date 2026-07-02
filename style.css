@@ -309,3 +309,44 @@ img {
   gap: 80px; /* Aumenté el gap a 80px para que haya más separación entre el texto y las fotos */
   border-bottom: 5px solid #FF0000;
 }
+
+
+/* --- NUEVA SECCIÓN CON VIDEO DE FONDO --- */
+.seccion-video-fondo {
+  position: relative;
+  padding: 15vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  overflow: hidden; /* Evita que el video se salga */
+  border-bottom: 5px solid #FF0000;
+  min-height: 80vh; /* Para que la caja tenga buen tamaño */
+}
+
+/* Configuramos el video para que quede al fondo */
+.video-fondo-seccion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Llena la pantalla sin aplastarse */
+  z-index: 0;
+  filter: grayscale(100%) contrast(150%);
+}
+
+/* La capa oscura que va sobre el video para que el texto resalte */
+.seccion-video-fondo::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: 0;
+}
+
+/* Obligamos a que el texto y las fotos floten por encima del video y la capa oscura */
+.seccion-video-fondo > div {
+  position: relative;
+  z-index: 1;
+}
